@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://hii1ibvq2ebq"]
+
+[ext_resource type="Script" uid="uid://byfbs7dalwpto" path="res://playing_field.gd" id="1_ct7jv"]
+[ext_resource type="PackedScene" uid="uid://bh3p2wu2anneo" path="res://player.tscn" id="1_fjfaw"]
+
+[node name="Playing_Field" type="Node2D"]
+script = ExtResource("1_ct7jv")
+
+[node name="Player" parent="." instance=ExtResource("1_fjfaw")]
+position = Vector2(206, 374)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 324)
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(24, 368)
