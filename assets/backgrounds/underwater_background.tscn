@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6x8v0j6y5n3q"]
+
+[ext_resource type="Script" uid="uid://b7o3igicem871" path="res://assets/backgrounds/underwater_background.gd" id="1_2u4vx"]
+
+[node name="UnderwaterBackground" type="Node2D"]
+z_index = -1
+script = ExtResource("1_2u4vx")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Bubbles" type="Node2D" parent="."]
