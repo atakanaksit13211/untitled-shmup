@@ -8,7 +8,7 @@ signal player_bullet_screen_exit
 @export var bullet_direction = Vector2.RIGHT # which direction the bullet will move by default (vec2).
 var screen_size # Size of the game window.d
 
-const my_scene: PackedScene = preload("res://test_bullet.tscn")
+const my_scene: PackedScene = preload("res://scenes/test_bullet.tscn")
 
 
 

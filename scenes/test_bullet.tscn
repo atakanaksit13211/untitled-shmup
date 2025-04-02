@@ -1,29 +1,29 @@
 [gd_scene load_steps=10 format=3 uid="uid://bwxbegi4ecwyk"]
 
-[ext_resource type="Script" uid="uid://dt0wxbtrhiebb" path="res://test_bullet.gd" id="1_1meno"]
-[ext_resource type="Texture2D" uid="uid://d2eyxsrau741x" path="res://sprites/loading_2.png" id="1_8iqr7"]
+[ext_resource type="Script" uid="uid://dt0wxbtrhiebb" path="res://scripts/test_bullet.gd" id="1_e3aac"]
+[ext_resource type="Texture2D" uid="uid://d2eyxsrau741x" path="res://assets/sprites/loading_2.png" id="2_u7x4a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d2don"]
 radius = 5.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1meno"]
-atlas = ExtResource("1_8iqr7")
+atlas = ExtResource("2_u7x4a")
 region = Rect2(0, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_di5d5"]
-atlas = ExtResource("1_8iqr7")
+atlas = ExtResource("2_u7x4a")
 region = Rect2(64, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ri6l1"]
-atlas = ExtResource("1_8iqr7")
+atlas = ExtResource("2_u7x4a")
 region = Rect2(128, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ccb3f"]
-atlas = ExtResource("1_8iqr7")
+atlas = ExtResource("2_u7x4a")
 region = Rect2(192, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_es6rm"]
-atlas = ExtResource("1_8iqr7")
+atlas = ExtResource("2_u7x4a")
 region = Rect2(256, 0, 64, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hsjo5"]
@@ -51,7 +51,9 @@ animations = [{
 
 [node name="test_bullet" type="Area2D"]
 collision_mask = 0
-script = ExtResource("1_1meno")
+script = ExtResource("1_e3aac")
+bullet_speed = null
+bullet_direction = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(12, 0)
