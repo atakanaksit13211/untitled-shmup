@@ -52,8 +52,6 @@ animations = [{
 [node name="test_bullet" type="Area2D"]
 collision_mask = 0
 script = ExtResource("1_e3aac")
-bullet_speed = null
-bullet_direction = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(12, 0)
