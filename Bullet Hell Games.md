@@ -60,7 +60,7 @@ both mouse and w-a-s-d controls
 - [x] Hand design
 - [ ] Random
 
-[!question]- How much level?
+-[!question]- How much level?
 -> 1(prototype)
 -> 5 
 -> 10-12 (with secret level)
