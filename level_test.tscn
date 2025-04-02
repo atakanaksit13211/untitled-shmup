@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://csq0smwg6g4a6"]
+
+[ext_resource type="PackedScene" uid="uid://b6x8v0j6y5n3q" path="res://assets/backgrounds/underwater_background.tscn" id="1_k0mgt"]
+
+[node name="Level_TEST" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="BottomStatic" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="UnderwaterBackground" parent="ParallaxBackground/BottomStatic" instance=ExtResource("1_k0mgt")]
+position = Vector2(1, 0)
