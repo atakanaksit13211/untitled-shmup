@@ -56,6 +56,11 @@ both mouse and w-a-s-d controls
 - [ ] Procedural?
 - [x] Hand-design map?
 
+### Approved Art Syle
+Example:
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dh1kF4k3xUW4&psig=AOvVaw3JlA-mqxOToem1OugaKPTJ&ust=1743640233948000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCMjekZuMuIwDFQAAAAAdAAAAABAc
+
+
 ### Enemy Spawn
 - [x] Hand design
 - [ ] Random
