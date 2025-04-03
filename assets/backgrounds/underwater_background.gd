@@ -1,13 +1,8 @@
 extends Node2D
 
 @onready var bubbles = $Bubbles
-@onready var background = $Background
 
 func _ready():
-	# Arka plan rengini ayarla
-	var background_color = Color(0.1, 0.2, 0.4)  # Daha koyu mavi ton
-	background.color = background_color
-	
 	# Kabarcıkları başlat
 	start_bubbles()
 

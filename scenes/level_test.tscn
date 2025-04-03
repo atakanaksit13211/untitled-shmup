@@ -1,13 +1,75 @@
-[gd_scene load_steps=2 format=3 uid="uid://csq0smwg6g4a6"]
+[gd_scene load_steps=7 format=3 uid="uid://csq0smwg6g4a6"]
 
 [ext_resource type="PackedScene" uid="uid://b6x8v0j6y5n3q" path="res://assets/backgrounds/underwater_background.tscn" id="1_k0mgt"]
+[ext_resource type="Texture2D" uid="uid://bmljcndoaf2pd" path="res://assets/sprites/volcano1.png" id="2_d5kir"]
+[ext_resource type="Texture2D" uid="uid://d2eyxsrau741x" path="res://assets/sprites/loading_2.png" id="2_vbogn"]
+[ext_resource type="Texture2D" uid="uid://6auhq8j87bpg" path="res://assets/sprites/sea_top.png" id="3_plvai"]
+[ext_resource type="Texture2D" uid="uid://rjgejfl5rmji" path="res://assets/sprites/Unnamed.png" id="4_vkcgd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e73ws"]
+size = Vector2(5252, 52)
 
 [node name="Level_TEST" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="BottomStatic" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0, 0)
+texture_repeat = 2
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1152, 0)
 
 [node name="UnderwaterBackground" parent="ParallaxBackground/BottomStatic" instance=ExtResource("1_k0mgt")]
-position = Vector2(1, 0)
+texture_repeat = 2
+
+[node name="something" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-2, 0)
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/something"]
+position = Vector2(322, 442)
+texture = ExtResource("4_vkcgd")
+
+[node name="sea_top" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/sea_top"]
+position = Vector2(642, 197)
+texture = ExtResource("3_plvai")
+
+[node name="mountains" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/mountains"]
+position = Vector2(642, 548)
+texture = ExtResource("2_d5kir")
+
+[node name="LevelBoundary" type="Area2D" parent="."]
+
+[node name="top_bound" type="CollisionShape2D" parent="LevelBoundary"]
+position = Vector2(2626, -26)
+shape = SubResource("RectangleShape2D_e73ws")
+
+[node name="bottom_bound" type="CollisionShape2D" parent="LevelBoundary"]
+position = Vector2(2625, 673)
+shape = SubResource("RectangleShape2D_e73ws")
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(-543, 1)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(2599, 397)
+texture = ExtResource("2_vbogn")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(2046, 149)
+texture = ExtResource("2_vbogn")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1322, 437)
+texture = ExtResource("2_vbogn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(878, 234)
+texture = ExtResource("2_vbogn")

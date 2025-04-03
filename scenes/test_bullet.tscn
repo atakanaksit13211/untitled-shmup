@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://dt0wxbtrhiebb" path="res://scripts/test_bullet.gd" id="1_e3aac"]
 [ext_resource type="Texture2D" uid="uid://d2eyxsrau741x" path="res://assets/sprites/loading_2.png" id="2_u7x4a"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d2don"]
-radius = 5.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_1meno"]
 atlas = ExtResource("2_u7x4a")
 region = Rect2(0, 0, 64, 32)
@@ -49,14 +46,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d2don"]
+radius = 5.0
+
 [node name="test_bullet" type="Area2D"]
 collision_mask = 0
 script = ExtResource("1_e3aac")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(12, 0)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_d2don")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hsjo5")
@@ -65,5 +60,12 @@ frame = 1
 frame_progress = 0.548192
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-17, 0)
+rect = Rect2(-10, -10, 55, 20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_d2don")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

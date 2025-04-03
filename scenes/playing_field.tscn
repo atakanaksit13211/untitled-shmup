@@ -1,22 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://hii1ibvq2ebq"]
+[gd_scene load_steps=6 format=3 uid="uid://hii1ibvq2ebq"]
 
 [ext_resource type="Script" uid="uid://byfbs7dalwpto" path="res://scripts/playing_field.gd" id="1_ct7jv"]
 [ext_resource type="PackedScene" uid="uid://bh3p2wu2anneo" path="res://scenes/player.tscn" id="1_fjfaw"]
 [ext_resource type="PackedScene" uid="uid://csq0smwg6g4a6" path="res://scenes/level_test.tscn" id="3_75pwy"]
+[ext_resource type="Script" uid="uid://dn6gdf3by80oj" path="res://scripts/level_test.gd" id="3_xnee4"]
+[ext_resource type="Script" uid="uid://brewkpgn87j14" path="res://scripts/camera_2d.gd" id="5_t44w6"]
 
 [node name="Playing_Field" type="Node2D"]
 script = ExtResource("1_ct7jv")
 maxPlayerBullets = 6
 
 [node name="Level_TEST" parent="." instance=ExtResource("3_75pwy")]
+script = ExtResource("3_xnee4")
 
-[node name="Player" parent="." instance=ExtResource("1_fjfaw")]
-position = Vector2(176, 195)
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(578, 327)
+script = ExtResource("5_t44w6")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(577, 324)
+[node name="Player" parent="Camera" instance=ExtResource("1_fjfaw")]
+position = Vector2(-1, -4)
+collision_layer = 3
+collision_mask = 3
 
-[node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(24, 368)
-
-[connection signal="shoot" from="Player" to="." method="_on_player_shoot"]
+[connection signal="shoot" from="Camera/Player" to="." method="_on_player_shoot"]
