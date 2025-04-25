@@ -52,6 +52,7 @@ height = 92.0
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_onrkg")
+speed = 500
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sh265")

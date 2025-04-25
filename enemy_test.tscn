@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://ch53vbo136xss"]
+
+[ext_resource type="Texture2D" uid="uid://hs03xdypeag3" path="res://assets/sprites/enemy_test.png" id="1_tekfo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tegdf"]
+atlas = ExtResource("1_tekfo")
+region = Rect2(0, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6iok"]
+atlas = ExtResource("1_tekfo")
+region = Rect2(64, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5det1"]
+atlas = ExtResource("1_tekfo")
+region = Rect2(128, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0qgm"]
+atlas = ExtResource("1_tekfo")
+region = Rect2(192, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pgat"]
+atlas = ExtResource("1_tekfo")
+region = Rect2(256, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cvfc"]
+atlas = ExtResource("1_tekfo")
+region = Rect2(320, 0, 64, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4pey5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tegdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6iok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5det1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0qgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pgat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cvfc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h7glv"]
+radius = 15.0
+height = 64.0
+
+[node name="Enemy_test" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4pey5")
+frame = 1
+frame_progress = 0.594094
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_h7glv")
+
+[node name="BulletSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(-34, 1)

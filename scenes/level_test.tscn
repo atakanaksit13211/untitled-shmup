@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://csq0smwg6g4a6"]
+[gd_scene load_steps=6 format=3 uid="uid://csq0smwg6g4a6"]
 
 [ext_resource type="PackedScene" uid="uid://b6x8v0j6y5n3q" path="res://assets/backgrounds/underwater_background.tscn" id="1_k0mgt"]
 [ext_resource type="Texture2D" uid="uid://bmljcndoaf2pd" path="res://assets/sprites/volcano1.png" id="2_d5kir"]
-[ext_resource type="Texture2D" uid="uid://d2eyxsrau741x" path="res://assets/sprites/loading_2.png" id="2_vbogn"]
 [ext_resource type="Texture2D" uid="uid://6auhq8j87bpg" path="res://assets/sprites/sea_top.png" id="3_plvai"]
 [ext_resource type="Texture2D" uid="uid://rjgejfl5rmji" path="res://assets/sprites/Unnamed.png" id="4_vkcgd"]
 
@@ -22,7 +21,7 @@ motion_mirroring = Vector2(1152, 0)
 texture_repeat = 2
 
 [node name="something" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-2, 0)
+texture_repeat = 2
 motion_scale = Vector2(0.4, 0.4)
 motion_mirroring = Vector2(640, 0)
 
@@ -57,19 +56,3 @@ shape = SubResource("RectangleShape2D_e73ws")
 
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(-543, 1)
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(2599, 397)
-texture = ExtResource("2_vbogn")
-
-[node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(2046, 149)
-texture = ExtResource("2_vbogn")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(1322, 437)
-texture = ExtResource("2_vbogn")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(878, 234)
-texture = ExtResource("2_vbogn")
