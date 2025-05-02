@@ -1,67 +1,94 @@
-[gd_scene load_steps=10 format=3 uid="uid://bh3p2wu2anneo"]
+[gd_scene load_steps=7 format=4 uid="uid://bh3p2wu2anneo"]
 
-[ext_resource type="Texture2D" uid="uid://bbi5a30gt06hy" path="res://assets/sprites/loading_1.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://crp75g7nn27ya" path="res://scripts/player.gd" id="1_onrkg"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
-atlas = ExtResource("1_4flbx")
-region = Rect2(0, 0, 100, 64)
+[sub_resource type="Animation" id="Animation_3vyb7"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 1, 1, 1]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
-atlas = ExtResource("1_4flbx")
-region = Rect2(100, 0, 100, 64)
+[sub_resource type="Animation" id="Animation_g2els"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [2, 2, 3, 3, 4, 4]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
-atlas = ExtResource("1_4flbx")
-region = Rect2(200, 0, 100, 64)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qhqgy"]
+_data = {
+&"idle": SubResource("Animation_3vyb7"),
+&"swim": SubResource("Animation_g2els")
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
-atlas = ExtResource("1_4flbx")
-region = Rect2(300, 0, 100, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
-atlas = ExtResource("1_4flbx")
-region = Rect2(400, 0, 100, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_sh265"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_onrkg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i3pqv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hqtel")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sweqy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2hs0m")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_dqkch"]
+_data = PackedByteArray("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")
+size_override = Vector2(192, 128)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1jxqw"]
-radius = 16.0
-height = 92.0
+radius = 10.0
+height = 36.0
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_onrkg")
 speed = 500
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_sh265")
-frame_progress = 0.55245
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qhqgy")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_dqkch")
+hframes = 3
+vframes = 2
+frame = 1
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": true,
+"layer_section": true,
+"output_section": true,
+"pending_changes": {},
+"slice_section": true
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "test123",
+"only_visible": false,
+"player": "AnimationPlayer",
+"slice": "",
+"source": "res://assets/Redefined_cybernetic_swimmer.ase"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "b98190278f87696566d396c53b5725b9"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 8)
+position = Vector2(2, 4)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_1jxqw")
 
 [node name="BulletSpawnPoint" type="Marker2D" parent="."]
-position = Vector2(47, 9)
+position = Vector2(33, 0)
